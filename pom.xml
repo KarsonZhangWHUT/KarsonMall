@@ -21,6 +21,4 @@
         <module>mall-common</module>
         <module>mall-gateway</module>
     </modules>
-
-
 </project>
