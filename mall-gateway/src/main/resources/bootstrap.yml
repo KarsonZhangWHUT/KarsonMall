@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+        namespace: c38086a3-fa76-438f-b3cf-767ded3eb925
+  application:
+    name: mall-gateway
+server:
+  port: 88
