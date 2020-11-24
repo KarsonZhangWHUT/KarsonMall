@@ -20,5 +20,9 @@
         <module>renren-generator</module>
         <module>mall-common</module>
         <module>mall-gateway</module>
+        <module>mall-auth-server</module>
+        <module>mall-cart</module>
+        <module>mall-third-party</module>
+        <module>mall-search</module>
     </modules>
 </project>

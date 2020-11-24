@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @MapperScan("com.karson.mall.order.dao")
 @SpringBootApplication
+
 public class MallOrderApplication {
 
     public static void main(String[] args) {

@@ -1,19 +1,49 @@
 spring:
+  application:
+    name: mall-product
   datasource:
     username: root
     password: zks123456
+    #    password: 123456
     url: jdbc:mysql://rm-bp1dfy7v5qt0m3gkm1o.mysql.rds.aliyuncs.com:3306/mall_pms
+    #    url: jdbc:mysql://127.0.0.1:3306/mall_pms
     driver-class-name: com.mysql.jdbc.Driver
   cloud:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
-  application:
-    name: mall-product
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+  thymeleaf:
+    cache: false
+  redis:
+    host: 118.31.38.90
+    port: 6379
+  cache:
+    type: redis
+    redis:
+      time-to-live: 3600000
+      use-key-prefix: true
+      cache-null-values: true
+#     key-prefix: CACHE_
+#     cache-names:
+  session:
+    store-type: redis
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
   global-config:
     db-config:
       id-type: auto
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
 server:
   port: 10001
+logging:
+  level:
+    com.karson.mall: debug
+mall:
+  thread:
+    core-size: 20
+    max-size: 100
+    keep-alive-time: 10

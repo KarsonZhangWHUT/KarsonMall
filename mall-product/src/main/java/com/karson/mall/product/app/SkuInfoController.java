@@ -1,19 +1,14 @@
-package com.karson.mall.product.controller;
+package com.karson.mall.product.app;
+
+import com.karson.common.utils.PageUtils;
+import com.karson.common.utils.R;
+import com.karson.mall.product.entity.SkuInfoEntity;
+import com.karson.mall.product.service.SkuInfoService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Arrays;
 import java.util.Map;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.karson.mall.product.entity.SkuInfoEntity;
-import com.karson.mall.product.service.SkuInfoService;
-import com.karson.common.utils.PageUtils;
-import com.karson.common.utils.R;
 
 
 
@@ -36,7 +31,7 @@ public class SkuInfoController {
     @RequestMapping("/list")
     //@RequiresPermissions("product:skuinfo:list")
     public R list(@RequestParam Map<String, Object> params){
-        PageUtils page = skuInfoService.queryPage(params);
+        PageUtils page = skuInfoService.queryPageByCondition(params);
 
         return R.ok().put("page", page);
     }

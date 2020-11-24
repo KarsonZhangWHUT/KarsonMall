@@ -3,7 +3,9 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: zks123456
+    #    password: 123456
     url: jdbc:mysql://rm-bp1dfy7v5qt0m3gkm1o.mysql.rds.aliyuncs.com:3306/mall_sms
+  #    url: jdbc:mysql://127.0.0.1:3306/mall_sms
   cloud:
     nacos:
       discovery:

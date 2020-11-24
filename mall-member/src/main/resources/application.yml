@@ -1,15 +1,17 @@
 spring:
+  application:
+    name: mall-member
   datasource:
     url: jdbc:mysql://rm-bp1dfy7v5qt0m3gkm1o.mysql.rds.aliyuncs.com:3306/mall_ums
+#    url: jdbc:mysql://127.0.0.1:3306/mall_ums
     username: root
     password: zks123456
+#    password: 123456
     driver-class-name: com.mysql.jdbc.Driver
   cloud:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
-  application:
-    name: mall-member
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
   global-config:
@@ -17,3 +19,7 @@ mybatis-plus:
       id-type: auto
 server:
   port: 8000
+
+logging:
+  level:
+    com.karson.mall: debug

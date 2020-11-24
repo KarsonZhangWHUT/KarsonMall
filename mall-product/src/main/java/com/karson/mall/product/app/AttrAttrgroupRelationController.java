@@ -1,4 +1,4 @@
-package com.karson.mall.product.controller;
+package com.karson.mall.product.app;
 
 import java.util.Arrays;
 import java.util.Map;
