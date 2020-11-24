@@ -19,7 +19,6 @@
         <spring-cloud.version>Hoxton.SR8</spring-cloud.version>
     </properties>
 
-
     <dependencies>
         <dependency>
             <groupId>com.karson.mall</groupId>
