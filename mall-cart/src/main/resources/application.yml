@@ -1,0 +1,18 @@
+server:
+  port: 30001
+spring:
+  application:
+    name: mall-cart
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  session:
+    store-type: redis
+  redis:
+    host: 118.31.38.90
+mall:
+  thread:
+    core-size: 20
+    max-size: 100
+    keep-alive-time: 10

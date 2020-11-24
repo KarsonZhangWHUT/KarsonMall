@@ -1,0 +1,16 @@
+server:
+  port: 12000
+spring:
+  application:
+    name: mall-search
+  thymeleaf:
+    cache: false
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  redis:
+    host: 118.31.38.90
+    port: 6379
+  session:
+    store-type: redis

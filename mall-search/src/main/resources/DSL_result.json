@@ -1,0 +1,340 @@
+{
+  "took": 12,
+  "timed_out": false,
+  "_shards": {
+    "total": 1,
+    "successful": 1,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": {
+      "value": 1,
+      "relation": "eq"
+    },
+    "max_score": 0.05080427,
+    "hits": [
+      {
+        "_index": "mall_product",
+        "_type": "_doc",
+        "_id": "2",
+        "_score": 0.05080427,
+        "_source": {
+          "attrs": [
+            {
+              "attrId": 2,
+              "attrName": "上市年份",
+              "attrValue": "2020"
+            },
+            {
+              "attrId": 3,
+              "attrName": "颜色",
+              "attrValue": "流光幻镜"
+            },
+            {
+              "attrId": 1,
+              "attrName": "入网参数",
+              "attrValue": "5G"
+            },
+            {
+              "attrId": 9,
+              "attrName": "电池容量",
+              "attrValue": "5000mAh"
+            },
+            {
+              "attrId": 10,
+              "attrName": "机身长度(mm)",
+              "attrValue": "168"
+            },
+            {
+              "attrId": 7,
+              "attrName": "CPU型号",
+              "attrValue": "麒麟990"
+            },
+            {
+              "attrId": 8,
+              "attrName": "CPU工艺",
+              "attrValue": "5nm"
+            },
+            {
+              "attrId": 12,
+              "attrName": "CPU品牌",
+              "attrValue": "海思(Hisilicon)"
+            }
+          ],
+          "brandId": 2,
+          "brandImg": "",
+          "brandName": "华为",
+          "catalogId": 225,
+          "catalogName": "手机",
+          "hasStock": true,
+          "hotScore": 0,
+          "saleCount": 1454,
+          "skuId": 2,
+          "skuImage": "https://mall-fire.oss-cn-shenzhen.aliyuncs.com/2020-06-05/9915d4a7-9f73-4c71-85cc-65c0b7f644dd_图集2.jpg",
+          "skuPrice": 8888.0,
+          "skuTitle": "华为 HUAWEI P40 Pro+ 麒麟990 5G  流光幻镜 套餐二 麒麟990 5G SoC芯片 5000万超感知徕卡五摄 100倍双目变焦 全网通5G",
+          "spuId": 3
+        },
+        "highlight": {
+          "skuTitle": [
+            "<b style = 'color:red'>华为</b> HUAWEI P40 Pro+ 麒麟990 5G  流光幻镜 套餐二 麒麟990 5G SoC芯片 5000万超感知徕卡五摄 100倍双目变焦 全网通5G"
+          ]
+        }
+      }
+    ]
+  },
+  "aggregations": {
+    "catalog_agg": {
+      "doc_count_error_upper_bound": 0,
+      "sum_other_doc_count": 0,
+      "buckets": [
+        {
+          "key": 225,
+          "doc_count": 1,
+          "catalog_name_agg": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "手机",
+                "doc_count": 1
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "attr_agg": {
+      "doc_count": 8,
+      "attr_id_agg": {
+        "doc_count_error_upper_bound": 0,
+        "sum_other_doc_count": 0,
+        "buckets": [
+          {
+            "key": 1,
+            "doc_count": 1,
+            "attr_name_agg": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "入网参数",
+                  "doc_count": 1
+                }
+              ]
+            },
+            "attr_value_agg": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "5G",
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": 2,
+            "doc_count": 1,
+            "attr_name_agg": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "上市年份",
+                  "doc_count": 1
+                }
+              ]
+            },
+            "attr_value_agg": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "2020",
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": 3,
+            "doc_count": 1,
+            "attr_name_agg": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "颜色",
+                  "doc_count": 1
+                }
+              ]
+            },
+            "attr_value_agg": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "流光幻镜",
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": 7,
+            "doc_count": 1,
+            "attr_name_agg": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "CPU型号",
+                  "doc_count": 1
+                }
+              ]
+            },
+            "attr_value_agg": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "麒麟990",
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": 8,
+            "doc_count": 1,
+            "attr_name_agg": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "CPU工艺",
+                  "doc_count": 1
+                }
+              ]
+            },
+            "attr_value_agg": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "5nm",
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": 9,
+            "doc_count": 1,
+            "attr_name_agg": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "电池容量",
+                  "doc_count": 1
+                }
+              ]
+            },
+            "attr_value_agg": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "5000mAh",
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": 10,
+            "doc_count": 1,
+            "attr_name_agg": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "机身长度(mm)",
+                  "doc_count": 1
+                }
+              ]
+            },
+            "attr_value_agg": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "168",
+                  "doc_count": 1
+                }
+              ]
+            }
+          },
+          {
+            "key": 12,
+            "doc_count": 1,
+            "attr_name_agg": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "CPU品牌",
+                  "doc_count": 1
+                }
+              ]
+            },
+            "attr_value_agg": {
+              "doc_count_error_upper_bound": 0,
+              "sum_other_doc_count": 0,
+              "buckets": [
+                {
+                  "key": "海思(Hisilicon)",
+                  "doc_count": 1
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "brand_agg": {
+      "doc_count_error_upper_bound": 0,
+      "sum_other_doc_count": 0,
+      "buckets": [
+        {
+          "key": 2,
+          "doc_count": 1,
+          "brand_img_agg": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "",
+                "doc_count": 1
+              }
+            ]
+          },
+          "brand_name_agg": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "华为",
+                "doc_count": 1
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

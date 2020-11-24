@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: mall-third-party
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    alicloud:
+      access-key: LTAI4G5UdxxJjw8KVwY1RA1j
+      secret-key: s9ylZuxMUdANKE3zsuCvxTKCuTsRzY
+      oss:
+        endpoint: oss-cn-hangzhou.aliyuncs.com
+        bucket: karson-mall
+      sms:
+        host: https://cdcxdxjk.market.alicloudapi.com
+        path: /chuangxin/dxjk
+        content: 【创信】验证码：
+        appcode: e15b71db8d9049e2820e2d13e9e8e2ce
+
+server:
+  port: 30000
