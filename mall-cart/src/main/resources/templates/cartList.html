@@ -59,7 +59,7 @@
         <div class="one_search_load" th:if="${session.loginUser}==null">
             <img src="/static/cart/img/shop_07.jpg" class="one_load_wraing">
             <span>您还没有登录！登录后购物车的商品将保存到您账号中</span>
-            <a href="#"><input type="button" onclick="login()" value="立即登录" class="one_load_btn"></a>
+            <a href="http://auth.mall.com/login.html"><input type="button" onclick="login()" value="立即登录" class="one_load_btn"></a>
         </div>
     </div>
 </div>
@@ -223,7 +223,7 @@
 <script src="/static/cart/js/index.js" charset="utf-8"></script>
 <script type="text/javascript">
     function toTrade() {
-        window.location.href = "http://cart.gmall.com:8087/toTrade";
+        window.location.href = "http://order.mall.com/toTrade";
     }
 
     function toItem(skuId) {

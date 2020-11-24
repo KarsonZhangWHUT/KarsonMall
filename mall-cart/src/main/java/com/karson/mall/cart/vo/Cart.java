@@ -38,7 +38,8 @@ public class Cart {
         BigDecimal bigDecimal = new BigDecimal(0);
         if (items != null && items.size() > 0) {
             for (CartItem item : items) {
-                bigDecimal = bigDecimal.add(item.getTotalPrice());
+                if (item.getChecked())
+                    bigDecimal = bigDecimal.add(item.getTotalPrice());
             }
         }
         bigDecimal = bigDecimal.subtract(reduce);
