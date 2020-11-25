@@ -6,6 +6,7 @@ import com.karson.mall.order.entity.OrderEntity;
 import com.karson.mall.order.vo.OrderConfirmVo;
 
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
 
 /**
  * 订单
@@ -21,6 +22,6 @@ public interface OrderService extends IService<OrderEntity> {
     /**
      * 订单确认页返回需要用的数据
      */
-    OrderConfirmVo confirmOrder();
+    OrderConfirmVo confirmOrder() throws ExecutionException, InterruptedException;
 }
 
