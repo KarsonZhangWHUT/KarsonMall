@@ -21,7 +21,6 @@ public class MallWebConfig implements WebMvcConfigurer {
     /**
      * 视图映射
      *
-     * @param registry
      */
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
