@@ -43,3 +43,10 @@ mall:
     core-size: 20
     max-size: 100
     keep-alive-time: 10
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: basic

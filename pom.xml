@@ -24,5 +24,6 @@
         <module>mall-cart</module>
         <module>mall-third-party</module>
         <module>mall-search</module>
+        <module>mall-seckill</module>
     </modules>
 </project>

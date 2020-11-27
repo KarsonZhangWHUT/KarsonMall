@@ -30,4 +30,6 @@ public class ItemController {
         model.addAttribute("item", skuItemVo);
         return "item";
     }
+
+
 }

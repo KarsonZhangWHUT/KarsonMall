@@ -15,6 +15,7 @@ package com.karson.common.exception;
  * 13:购物车
  * 14:物流
  * 15:用户模块
+ * 21:库存
  */
 
 public enum BizCodeEnum {
@@ -23,8 +24,9 @@ public enum BizCodeEnum {
     SMS_CODE_EXCEPTION(10002, "验证码获取频率太高，稍后再试"),
     PRODUCT_UP_EXCEPTION(11000, "商品上架异常"),
     USER_EXIST_EXCEPTION(15001, "用户名已存在"),
-    PHONE_EXIST_EXCePTION(150002, "手机号已注册"),
-    ACCOUNT_PASSWORD_INVALID_EXCEPTION(150003, "用户名或密码错误");
+    PHONE_EXIST_EXCePTION(15002, "手机号已注册"),
+    ACCOUNT_PASSWORD_INVALID_EXCEPTION(150003, "用户名或密码错误"),
+    NO_STOCK_EXCEPTION(21000, "没有库存");
 
 
     private int code;

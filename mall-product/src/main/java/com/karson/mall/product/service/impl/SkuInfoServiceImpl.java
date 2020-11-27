@@ -1,15 +1,19 @@
 package com.karson.mall.product.service.impl;
 
+import com.alibaba.fastjson.TypeReference;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.karson.common.utils.PageUtils;
 import com.karson.common.utils.Query;
+import com.karson.common.utils.R;
 import com.karson.mall.product.dao.SkuInfoDao;
 import com.karson.mall.product.entity.SkuImagesEntity;
 import com.karson.mall.product.entity.SkuInfoEntity;
 import com.karson.mall.product.entity.SpuInfoDescEntity;
+import com.karson.mall.product.feign.SecKillFeignService;
 import com.karson.mall.product.service.*;
+import com.karson.mall.product.vo.SecKillSkuInfoVo;
 import com.karson.mall.product.vo.SkuItemSalAttrsVo;
 import com.karson.mall.product.vo.SkuItemVo;
 import com.karson.mall.product.vo.SpuItemAttrGroupVo;
@@ -40,6 +44,9 @@ public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoDao, SkuInfoEntity> i
 
     @Autowired
     private SkuSaleAttrValueService skuSaleAttrValueService;
+
+    @Autowired
+    private SecKillFeignService secKillFeignService;
 
     @Autowired
     private ThreadPoolExecutor threadPoolExecutor;
@@ -166,8 +173,18 @@ public class SkuInfoServiceImpl extends ServiceImpl<SkuInfoDao, SkuInfoEntity> i
             List<SkuImagesEntity> images = skuImagesService.getImagesBySkuId(skuId);
             skuItemVo.setImages(images);
         }, threadPoolExecutor);
+        //查询当前sku是否参与秒杀优惠
 
-        CompletableFuture.allOf(descFuture, saleAttrFutrue, baseAttrFuture, imagesFuture).get();
+        CompletableFuture<Void> getSkuSecKillInfoFuture = CompletableFuture.runAsync(() -> {
+            R skuSecKillInfo = secKillFeignService.getSkuSecKillInfo(skuId);
+            if (skuSecKillInfo.getCode() == 0) {
+                SecKillSkuInfoVo secKillSkuInfoVo = skuSecKillInfo.getData(new TypeReference<SecKillSkuInfoVo>() {
+                });
+                skuItemVo.setSecKillSkuInfoVo(secKillSkuInfoVo);
+            }
+        }, threadPoolExecutor);
+
+        CompletableFuture.allOf(descFuture, saleAttrFutrue, baseAttrFuture, imagesFuture, getSkuSecKillInfoFuture).get();
 
         //等待所有任务都完成
         return skuItemVo;

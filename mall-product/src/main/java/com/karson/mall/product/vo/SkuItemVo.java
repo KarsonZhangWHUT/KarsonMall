@@ -33,5 +33,7 @@ public class SkuItemVo {
     //获取spu的规格参数信息
     private List<SpuItemAttrGroupVo> groupAttrs;
 
+    SecKillSkuInfoVo secKillSkuInfoVo;//当前商品的秒杀优惠信息
+
 
 }

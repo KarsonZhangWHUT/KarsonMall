@@ -1,10 +1,13 @@
 package com.karson.mall.ware.controller;
 
+import com.karson.common.exception.BizCodeEnum;
+import com.karson.common.exception.NoStockException;
 import com.karson.common.utils.PageUtils;
 import com.karson.common.utils.R;
 import com.karson.mall.ware.entity.WareSkuEntity;
 import com.karson.mall.ware.service.WareSkuService;
 import com.karson.mall.ware.vo.SkuHasStockVo;
+import com.karson.mall.ware.vo.WareSkuLockVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,6 +28,20 @@ import java.util.Map;
 public class WareSkuController {
     @Autowired
     private WareSkuService wareSkuService;
+
+
+    @PostMapping("/lock/order")
+    public R orderLockStock(@RequestBody WareSkuLockVo vo) {
+        Boolean stock = null;
+        try {
+            stock = wareSkuService.orderLockStock(vo);
+            return R.ok();
+        } catch (NoStockException e) {
+            return R.error(BizCodeEnum.NO_STOCK_EXCEPTION.getCode(),
+                    BizCodeEnum.NO_STOCK_EXCEPTION.getMessage());
+        }
+    }
+
 
     /**
      * 查询sku是否有库存

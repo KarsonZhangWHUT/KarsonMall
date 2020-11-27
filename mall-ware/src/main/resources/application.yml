@@ -14,6 +14,18 @@ spring:
     name: mall-ware
   jackson:
     date-format: yyyy-MM-dd HH:mm:ss
+  rabbitmq:
+    host: 118.31.38.90
+    port: 5672
+    virtual-host: /
+#    #    publisher-confirms: true
+#    publisher-confirm-type: correlated
+#    publisher-returns: true    #开启发送端消息抵达队列的确认
+#    template:
+#      mandatory: true   #只要抵达队列，以异步方式优先回调这个确认returnconfirm
+    listener:
+      direct:
+        acknowledge-mode: manual #手动确认消息
 mybatis-plus:
   mapper-locations: classpath:/mapper/**/*.xml
   global-config:
